@@ -1,11 +1,7 @@
 import React from "react"
-import ExampleButton from "src/components/example-button"
+
 function App() {
-  return (
-    <div>
-      <ExampleButton label="Button" />
-    </div>
-  )
+  return <div>app</div>
 }
 
 export default App

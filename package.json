@@ -1,5 +1,5 @@
 {
-  "name": "frontendmentor-template",
+  "name": "easybank-landing-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,6 +41,9 @@
     "eject": "react-app-rewired eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": "mcrowder65"
   },
   "browserslist": {
     "production": [
