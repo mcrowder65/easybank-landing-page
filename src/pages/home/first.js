@@ -44,25 +44,33 @@ const Message = styled.div`
   height: 316px;
 `
 const DesktopImage = styled.img`
-  z-index: 10;
   position: absolute;
-  right: -500px;
-  top: -10px;
-  overflow: hidden;
+  right: -600px;
+  top: -175px;
   ${(props) => props.theme.breakpoints("lg")} {
     right: -800px;
   }
   ${(props) => props.theme.breakpoints("md")} {
-    right: -1000px;
+    right: -1100px;
   }
   ${(props) => props.theme.breakpoints("sm")} {
     display: none;
+  }
+`
+const MobileImage = styled.img`
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: -160px;
+  ${(props) => props.theme.breakpoints("sm")} {
+    display: unset;
   }
 `
 function First(props) {
   return (
     <div {...props}>
       <DesktopImage src={bgIntroDesktop} />
+      <MobileImage src={bgIntroMobile} />
       <Message>
         <h3>Next generation digital banking</h3>
         <p>
@@ -77,7 +85,8 @@ function First(props) {
 }
 
 export default styled(First)`
-  z-index: 1;
+  position: relative;
+  overflow-y: hidden;
   height: 676px;
   background-color: #fafafa;
   overflow-x: hidden;
@@ -87,5 +96,8 @@ export default styled(First)`
   ${(props) => props.theme.paddingBreakpoints.padding};
   ${(props) => props.theme.breakpoints("sm")} {
     align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 88px;
+    overflow-x: unset;
   }
 `
