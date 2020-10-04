@@ -6,7 +6,9 @@ import Home from "src/pages/home/home"
 ReactDOM.render(
   <React.StrictMode>
     <Providers>
-      <Home />
+      <div>
+        <Home />
+      </div>
     </Providers>
   </React.StrictMode>,
   document.getElementById("root"),
