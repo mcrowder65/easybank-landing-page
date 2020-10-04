@@ -10,14 +10,17 @@ const images = {
   plane,
   restaurant,
 }
+const Text = styled.div``
 const Author = styled.p``
 const Review = styled.p``
 function Card({ image, author, review, ...props }) {
   return (
     <div {...props}>
       <img src={images[image]} />
-      <Author>{author}</Author>
-      <Review>{review}</Review>
+      <Text>
+        <Author>By {author}</Author>
+        <Review>{review}</Review>
+      </Text>
     </div>
   )
 }
@@ -25,24 +28,33 @@ export default styled(Card)`
   width: 255px;
   height: 395px;
   border-radius: 4px;
-
+  background-color: white;
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 18px;
+    color: #9597a5;
+  }
   img {
-    width: 255px;
     height: 200px;
+    width: inherit;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
   }
+  ${Text} {
+    height: 50%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   ${Author} {
     font-size: 10px;
-    line-height: 18px;
     letter-spacing: -0.15625px;
-    color: #9597a5;
   }
 
   ${Review} {
     font-size: 13px;
-    line-height: 18px;
     letter-spacing: -0.203125px;
-    color: #9597a5;
   }
 `

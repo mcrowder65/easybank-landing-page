@@ -5,7 +5,19 @@ export default {
   component: Card,
 }
 
-const Template = (args) => <Card {...args} />
+const Template = (args) => (
+  <div
+    style={{
+      backgroundColor: "lightgray",
+      height: 600,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Card {...args} />
+  </div>
+)
 
 export const Currency = Template.bind({})
 Currency.args = {
