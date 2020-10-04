@@ -5,12 +5,6 @@ const Message = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${(props) => props.theme.breakpoints("md")} {
-    align-items: center;
-    text-align: center;
-  }
-  width: 447px;
-  height: 316px;
   h3 {
     font-size: 56px;
     line-height: 64px;
@@ -25,6 +19,26 @@ const Message = styled.div`
     letter-spacing: -0.28125px;
     color: #9597a5;
   }
+  ${(props) => props.theme.breakpoints("md")} {
+    align-items: center;
+    text-align: center;
+    width: 327px;
+    height: 261px;
+    h3 {
+      font-size: 40px;
+      line-height: 47px;
+      text-align: center;
+      letter-spacing: -0.714286px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: -0.234375px;
+    }
+  }
+  width: 447px;
+  height: 316px;
 `
 function First(props) {
   return (
