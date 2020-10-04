@@ -74,9 +74,8 @@ const MobileImage = styled.img`
 const ImageMockups = styled.img`
   z-index: 1;
   right: 0;
-  top: -45px;
+  top: -120px;
   position: absolute;
-
   ${(props) => props.theme.breakpoints("xl")} {
     right: -100px;
   }
@@ -89,16 +88,21 @@ const ImageMockups = styled.img`
   ${(props) => props.theme.breakpoints("sm")} {
     width: 327px;
     height: 402px;
-    top: 0;
+    top: -80px;
     left: 0;
     right: 0;
     margin: auto;
   }
 `
+const Div = styled.div`
+  position: relative;
+`
 function First(props) {
   return (
     <>
-      <ImageMockups src={imageMockups} />
+      <Div>
+        <ImageMockups src={imageMockups} />
+      </Div>
       <div {...props}>
         <DesktopImage src={bgIntroDesktop} />
         <MobileImage src={bgIntroMobile} />
