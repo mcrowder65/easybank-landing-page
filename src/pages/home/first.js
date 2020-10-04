@@ -125,7 +125,7 @@ export default styled(First)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  ${(props) => props.theme.paddingBreakpoints.padding};
+  ${(props) => props.theme.paddingBreakpoints.padding()};
   ${(props) => props.theme.breakpoints("sm")} {
     align-items: center;
     justify-content: flex-end;

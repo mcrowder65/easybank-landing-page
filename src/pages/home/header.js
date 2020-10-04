@@ -56,7 +56,7 @@ export default styled(Header)`
   ${IconHamburger} {
     display: none;
   }
-  ${theme.paddingBreakpoints.padding}
+  ${theme.paddingBreakpoints.padding()}
 
   ${(props) => props.theme.breakpoints("sm")} {
     ${Button} {

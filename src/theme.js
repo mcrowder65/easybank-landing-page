@@ -11,16 +11,16 @@ const theme = {
     bottom: "33px",
   },
   paddingBreakpoints: {
-    padding: css`
-      padding: 0 165px 0 165px;
+    padding: (top = 0, bottom = 0) => css`
+      padding: ${top} 165px ${bottom} 165px;
       @media (max-width: 1280px) {
-        padding: 0 75px 0 75px;
+        padding: ${top} 75px ${bottom} 75px;
       }
       @media (max-width: 960px) {
-        padding: 0 45px 0 45px;
+        padding: ${top} 45px ${bottom} 45px;
       }
       @media (max-width: 600px) {
-        padding: 0 24px 0 24px;
+        padding: ${top} 24px ${bottom} 24px;
       }
     `,
   },
