@@ -30,6 +30,7 @@ const theme = {
       sm: `@media (max-${dimension}: 600px)`,
       md: `@media (max-${dimension}: 960px)`,
       lg: `@media (max-${dimension}: 1280px)`,
+      xl: `@media (max-${dimension}: 1600px)`,
     }
     return sizes[size] ?? sizes.md
   },

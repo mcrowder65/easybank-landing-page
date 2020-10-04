@@ -5,6 +5,8 @@ function Second(props) {
 }
 
 export default styled(Second)`
+  position: sticky;
   height: 676px;
   background-color: #f4f5f7;
+  z-index: 0;
 `

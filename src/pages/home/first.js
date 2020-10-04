@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import Button from "src/components/button"
 import bgIntroDesktop from "src/images/bg-intro-desktop.svg"
 import bgIntroMobile from "src/images/bg-intro-mobile.svg"
+import imageMockups from "src/images/image-mockups.png"
 const Message = styled.div`
   position: static;
   display: flex;
@@ -45,8 +46,11 @@ const Message = styled.div`
 `
 const DesktopImage = styled.img`
   position: absolute;
-  right: -600px;
+  right: -300px;
   top: -175px;
+  ${(props) => props.theme.breakpoints("xl")} {
+    right: -525px;
+  }
   ${(props) => props.theme.breakpoints("lg")} {
     right: -800px;
   }
@@ -59,28 +63,56 @@ const DesktopImage = styled.img`
 `
 const MobileImage = styled.img`
   display: none;
-  position: absolute;
-  width: 100%;
-  top: -160px;
   ${(props) => props.theme.breakpoints("sm")} {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -240px;
     display: unset;
+  }
+`
+const ImageMockups = styled.img`
+  z-index: 1;
+  right: 0;
+  top: -45px;
+  position: absolute;
+
+  ${(props) => props.theme.breakpoints("xl")} {
+    right: -100px;
+  }
+  ${(props) => props.theme.breakpoints("lg")} {
+    right: -300px;
+  }
+  ${(props) => props.theme.breakpoints("md")} {
+    right: -700px;
+  }
+  ${(props) => props.theme.breakpoints("sm")} {
+    width: 327px;
+    height: 402px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 `
 function First(props) {
   return (
-    <div {...props}>
-      <DesktopImage src={bgIntroDesktop} />
-      <MobileImage src={bgIntroMobile} />
-      <Message>
-        <h3>Next generation digital banking</h3>
-        <p>
-          Take your financial life online. Your Easybank account will be a
-          one-stop-shop for spending, saving, budgeting, investing, and much
-          more.
-        </p>
-        <Button>Request Invite</Button>
-      </Message>
-    </div>
+    <>
+      <ImageMockups src={imageMockups} />
+      <div {...props}>
+        <DesktopImage src={bgIntroDesktop} />
+        <MobileImage src={bgIntroMobile} />
+        <Message>
+          <h3>Next generation digital banking</h3>
+          <p>
+            Take your financial life online. Your Easybank account will be a
+            one-stop-shop for spending, saving, budgeting, investing, and much
+            more.
+          </p>
+          <Button>Request Invite</Button>
+        </Message>
+      </div>
+    </>
   )
 }
 

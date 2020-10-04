@@ -46,6 +46,7 @@ function Header(props) {
 
 export default styled(Header)`
   height: 80px;
+  z-index: 2;
   width: 100%;
   background-color: white;
   display: flex;
