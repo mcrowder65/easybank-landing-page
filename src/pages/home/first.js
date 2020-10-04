@@ -1,7 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
 import Button from "src/components/button"
+import bgIntroDesktop from "src/images/bg-intro-desktop.svg"
+import bgIntroMobile from "src/images/bg-intro-mobile.svg"
 const Message = styled.div`
+  position: static;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,7 +22,7 @@ const Message = styled.div`
     letter-spacing: -0.28125px;
     color: #9597a5;
   }
-  ${(props) => props.theme.breakpoints("md")} {
+  ${(props) => props.theme.breakpoints("sm")} {
     align-items: center;
     text-align: center;
     width: 327px;
@@ -40,9 +43,26 @@ const Message = styled.div`
   width: 447px;
   height: 316px;
 `
+const DesktopImage = styled.img`
+  z-index: 10;
+  position: absolute;
+  right: -500px;
+  top: -10px;
+  overflow: hidden;
+  ${(props) => props.theme.breakpoints("lg")} {
+    right: -800px;
+  }
+  ${(props) => props.theme.breakpoints("md")} {
+    right: -1000px;
+  }
+  ${(props) => props.theme.breakpoints("sm")} {
+    display: none;
+  }
+`
 function First(props) {
   return (
     <div {...props}>
+      <DesktopImage src={bgIntroDesktop} />
       <Message>
         <h3>Next generation digital banking</h3>
         <p>
@@ -57,10 +77,15 @@ function First(props) {
 }
 
 export default styled(First)`
+  z-index: 1;
   height: 676px;
   background-color: #fafafa;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${(props) => props.theme.paddingBreakpoints.padding};
+  ${(props) => props.theme.breakpoints("sm")} {
+    align-items: center;
+  }
 `

@@ -45,12 +45,14 @@ function Header(props) {
 }
 
 export default styled(Header)`
+  z-index: 1000;
   height: 80px;
   width: 100%;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
   ${IconHamburger} {
     display: none;
   }
